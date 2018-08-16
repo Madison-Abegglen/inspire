@@ -1,3 +1,5 @@
+import Quote from '../../models/Quote.js'
+
 let url = '//bcw-getter.herokuapp.com/?url=';
 let url2 = 'http://quotesondesign.com/api/3.0/api-3.0.json';
 let apiUrl = url + encodeURIComponent(url2);
@@ -14,7 +16,8 @@ export default class QuoteService {
 	getQuote(callWhenDone) {
 		console.log('looking for some good quotes')
 		quoteApi().then((res) => {
-			callWhenDone(res.data)
+			let quote = new Quote(res.data)
+			callWhenDone(quote)
 		})
 	}
 }

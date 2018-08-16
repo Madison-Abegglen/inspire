@@ -14,7 +14,7 @@ export default class ImageService {
 		console.log("Looking for a good pic")
 		imgApi().then(res => {
 			console.log('Image Data:', res.data)
-			callWhenDone(res.data)
+			callWhenDone(res.data.large_url)
 		})
 	}
 }

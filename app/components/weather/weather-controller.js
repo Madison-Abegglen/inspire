@@ -3,6 +3,16 @@ import WeatherService from "./weather-service.js";
 var weatherService = new WeatherService()
 
 
+// function drawf(){
+// 	template = `
+// 	${weatherService.fah}
+// 	`
+// }
+
+function draw(data) {
+	console.log(data)
+}
+
 export default class WeatherController {
 
 	constructor() {
@@ -10,9 +20,10 @@ export default class WeatherController {
 		this.getWeather()
 	}
 	getWeather() {
-		weatherService.getWeather(weather => {
-			console.log(weather);
-			//What can you do with this weather object?
-		})
+		weatherService.getWeather(draw)
 	}
+
+	// changeToF(){
+	// 	drawF()
+	// }
 }
