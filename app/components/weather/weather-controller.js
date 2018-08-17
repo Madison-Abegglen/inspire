@@ -10,7 +10,7 @@ var weatherService = new WeatherService()
 // }
 
 function draw(data) {
-	console.log(data)
+	document.getElementById('weather').innerHTML = `${(data.temp)}°`
 }
 
 export default class WeatherController {
