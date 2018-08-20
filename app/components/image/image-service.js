@@ -14,8 +14,9 @@ export default class ImageService {
 	getImg(callWhenDone) {
 		// ^^^^^^^ How do you call this function?
 		console.log("Looking for a good pic")
-		imgApi().then(res => {
+		imgApi.get().then(res => {
 			let img = new Img(res.data)
+			console.log(res.data)
 			callWhenDone(img)
 		})
 	}

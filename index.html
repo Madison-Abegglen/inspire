@@ -15,12 +15,15 @@
 		</div>
 
 		<div id="todo" class="row text">
-			<h1>A Todo List</h1>
-			<form onsubmit=""></form>
+			<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+				<input type="text" name="description" placeholder="New Todo" required>
+				<button type="submit">Submit</button>
+			</form>
+			<div class="col-sm-12" id="todo-list">
+			</div>
 		</div>
 
 		<div id="weather" class="row text">
-			<h1>Your Weather Template</h1>
 		</div>
 
 	</div>
