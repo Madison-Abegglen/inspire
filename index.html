@@ -10,22 +10,22 @@
 
 <body id="body" class="bg">
 	<div class="container-fluid">
-		<div id="quote" class="row text">
-			<h1>The Quote</h1>
-		</div>
+		<div class="row">
+			<div id="quote" class="col-sm-12 text">
+			</div>
 
-		<div id="todo" class="row text">
-			<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
-				<input type="text" name="description" placeholder="New Todo" required>
-				<button type="submit">Submit</button>
-			</form>
-			<div class="col-sm-12" id="todo-list">
+			<div id="weather" class="col=sm-12 text">
+			</div>
+
+			<div id="todo" class="col-sm-12 text">
+				<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+					<input type="text" name="description" placeholder="New Todo" required>
+					<button type="submit">Submit</button>
+				</form>
+				<div class="col-sm-12" id="todo-list">
+				</div>
 			</div>
 		</div>
-
-		<div id="weather" class="row text">
-		</div>
-
 	</div>
 
 

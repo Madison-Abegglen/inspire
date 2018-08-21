@@ -1,7 +1,7 @@
 import Img from "../../models/Image.js"
 
 const url = '//bcw-getter.herokuapp.com/?url=';
-const url2 = 'http://www.splashbase.co/api/v1/images/random'
+const url2 = 'http://www.splashbase.co/api/v1/images/'
 const apiUrl = url + encodeURIComponent(url2);
 
 
@@ -11,13 +11,13 @@ const imgApi = axios.create({
 });
 
 export default class ImageService {
-	getImg(callWhenDone) {
-		// ^^^^^^^ How do you call this function?
+	getImg(callback) {
 		console.log("Looking for a good pic")
-		imgApi.get().then(res => {
-			let img = new Img(res.data)
-			console.log(res.data)
-			callWhenDone(img)
+		imgApi.get('search?query=beach').then(res => {
+			let images = res.data.images.map(i => new Img(i))
+			let randI = Math.floor(Math.random() * images.length)
+			let image = images[randI]
+			callback(image)
 		})
 	}
 }

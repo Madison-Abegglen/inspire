@@ -11,16 +11,11 @@ function draw(quote) {
 		<h4>-${quote.author}</h4>	
 	</div>
 	`
-	//template stuff here
 	document.getElementById('quote').innerHTML = template;
 }
 
 export default class QuoteController {
 	constructor() {
-		this.getQuote()
-	}
-
-	getQuote() {
 		qs.getQuote(draw)
 	}
 }

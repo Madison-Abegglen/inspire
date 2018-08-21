@@ -1,5 +1,5 @@
 export default class Img {
     constructor(data) {
-        this.lgUrl = data.large_url
+        this.url = data.url
     }
 }
